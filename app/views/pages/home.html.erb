@@ -1,9 +1,13 @@
 <h1>Pages#home</h1>
 <p>Find me in app/views/pages/home.html.erb</p>
 
-<form action="/answer" method="get">
-  <input type="text" name="city" placeholder="city">
-  <input type="text" name="query" placeholder="query">
-  <input type="submit">
-</form>
+<%= simple_form_for(:answer, url: answer_path, data: { turbo: false}, method: :get ) do |f| %>
+  <%= f.input :city,
+  input_html: {data: {address_autocomplete_target: "address"}, class: "d-none"},
+  wrapper_html: {data: {controller: "address-autocomplete", address_autocomplete_api_key_value: ENV["MAPBOX_API_KEY"]}
+  }
+  %>
+  <%= f.input :query %>
+  <%= f.submit %>
+<% end %>
   
