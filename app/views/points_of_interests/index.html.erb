@@ -1,0 +1,5 @@
+<% @pois.each do |poi| %>
+  <li class="list-group-item" role="option" data-autocomplete-value="<%= poi.id %>" data-autocomplete-label="<%= poi.name %>">
+    <%= poi.name %>
+  </li>
+<% end %>

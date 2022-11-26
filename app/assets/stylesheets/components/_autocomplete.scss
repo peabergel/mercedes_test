@@ -1,0 +1,36 @@
+*{
+  font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, Helvetica, sans-serif;
+}
+
+.poi {
+  max-width: none;
+  width: 100%;
+  height: 36px;
+  border: 1px solid lightgrey;
+  box-shadow: none;
+  background-color: transparent;
+}
+
+.poi-input {
+  // -webkit-appearance: none;
+  width: 100%;
+  min-height: 100%;
+  border: 0;
+  background-color: transparent;
+  font-size: 15px;
+  padding-left: 36px;
+  color: #3D3D3D;
+  &:focus { 
+    outline: dotted black 1px
+  }
+}
+
+.list-group-item {
+  font-size: 14px;
+  &:hover {
+    cursor: pointer;
+    background-color: #F3F3F3;
+  }
+}
+
+

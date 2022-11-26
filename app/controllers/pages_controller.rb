@@ -20,12 +20,11 @@ class PagesController < ApplicationController
 
   def answers_json
     @city = answer_params["city"]
-    @query = answer_params["query"]
-    raise
+    @poi = PointsOfInterest.find(params[:poi_id])
     coord = Geocoder.coordinates(@city)
     lat = coord[0]
     lng = coord[1]
-    url = "https://api.mapbox.com/geocoding/v5/mapbox.places/#{@query}.json?limit=10&proximity=#{lng}%2C#{lat}&types=poi&access_token=#{ENV['MAPBOX_API_KEY']}"
+    url = "https://api.mapbox.com/geocoding/v5/mapbox.places/#{@poi.name.gsub(' ', '%20')}.json?limit=10&proximity=#{lng}%2C#{lat}&types=poi&access_token=#{ENV['MAPBOX_API_KEY']}"
     @answer_serialized = URI.open(url).read
     JSON.parse(@answer_serialized)["features"]
   end

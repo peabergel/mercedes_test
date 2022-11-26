@@ -1252,6 +1252,11 @@ spdx-license-ids@^3.0.0:
   resolved "https://registry.yarnpkg.com/spdx-license-ids/-/spdx-license-ids-3.0.12.tgz#69077835abe2710b65f03969898b6637b505a779"
   integrity sha512-rr+VVSXtRhO4OHbXUiAF7xW3Bo9DuuF6C5jH+q/x15j2jniycgKbxU09Hr0WqlSLUs4i4ltHGXqTe7VHclYWyA==
 
+stimulus-autocomplete@^3.0.2:
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/stimulus-autocomplete/-/stimulus-autocomplete-3.0.2.tgz#24db95b0990c2272e11ef30ff2cee6ed05878558"
+  integrity sha512-8bluCHjz1cgPHu/V0OKhRrGG6V2ordFC+aQwYLJ0U0cRZCq8j10Z6j+DFTsDirFl7NO9iPL1j2z0/CUxeXw2gw==
+
 strip-indent@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/strip-indent/-/strip-indent-3.0.0.tgz#c32e1cee940b6b3432c771bc2c54bcce73cd3001"

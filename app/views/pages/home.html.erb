@@ -1,13 +1,22 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<h1>Find Points of interest in your city</h1>
 
 <%= simple_form_for(:answer, url: answer_path, data: { turbo: false}, method: :get ) do |f| %>
+
   <%= f.input :city,
   input_html: {data: {address_autocomplete_target: "address"}, class: "d-none"},
   wrapper_html: {data: {controller: "address-autocomplete", address_autocomplete_api_key_value: ENV["MAPBOX_API_KEY"]}
   }
   %>
-  <%= f.input :query %>
-  <%= f.submit %>
+  <label class="form-label string required" for="answer_poi">
+  Point of Interest
+  <abbr title="required">*</abbr>
+  </label>
+  <div data-controller="autocomplete" data-autocomplete-url-value="/points_of_interests" role="combobox", class="poi">
+    <input type="text" class="poi-input" placeholder="Search" data-autocomplete-target="input"/>
+    <input type="hidden" name="poi_id" data-autocomplete-target="hidden"/>
+    <ul class="list-group" data-autocomplete-target="results"></ul>
+  </div>
+
+  <%= f.submit "Search", class: 'btn btn-primary mt-3' %>
 <% end %>
   

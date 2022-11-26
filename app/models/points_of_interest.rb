@@ -1,0 +1,2 @@
+class PointsOfInterest < ApplicationRecord
+end
